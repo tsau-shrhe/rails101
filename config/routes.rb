@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # 指向 views\welcome資料夾裡的index.html.erb
+  root 'welcome#index'
 end

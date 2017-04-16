@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# 使用 bootstrap 框架
+# 使用gem 掛上 bootstrap 框架
 gem 'bootstrap-sass'
 
 group :development, :test do

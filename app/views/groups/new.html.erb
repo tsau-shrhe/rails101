@@ -14,5 +14,7 @@
 	<%= f.text_area :description %>
 	<br>
 	<%= f.submit "送出", :disable_with => "送出中..." %>
-	<% end -%>
+	<% end %>
+	<br>
+	<%= link_to "取消返回",root_path,:class => "btn btn-success btn-block"  %>
 </div>

@@ -1,0 +1,16 @@
+<%= form_for(@group) do |f| %>
+	<% if @group.errors.any? %>
+		<ul>
+			<% @group.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<%= f.label :title, "標題" %>
+	<%= f.text_field :title %>
+	<br>
+	<%= f.label :description, "內容" %>
+	<%= f.text_area :description %>
+	<br>
+	<%= f.submit "送出", :disable_with => '送出中' %>
+<% end %>

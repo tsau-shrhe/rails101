@@ -1,23 +1,9 @@
-<%= form_for(@group) do |f| %>
-	<div class="form-group">
-	<% if @group.errors.any? %>
-			<% @group.errors.full_messages.each do |msg| %>
-				<div class="alert alert-danger" role="alert">
-					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-					<strong><%= msg %></strong>
-				</div>
-			<% end %>
-	<% end %>
-	<div class="form-group string optional">
-		<%= f.label :title, "標題" , :class => "string optional control-label" %>
-		<%= f.text_field :title , :class => "string optional form-control form-control" %>
-	</div>
-	<div class="form-group string optional">
-		<%= f.label :description, "內容" , :class => "string optional control-label" %>
-		<%= f.text_area :description , :class => "string optional form-control form-control" %>
-	</div>
-	</div>
-	<%= f.submit "送出", :disable_with => '送出中', :class => "btn btn-primary btn-block" %>
-	<br>
-	<%= link_to "取消返回",root_path,:class => "btn btn-warning btn-block"  %>
+<%= simple_form_for @group do |f| %>
+  <div class="form-group">
+    <%= f.input :title, label:'標題', input_html: { class: "form-control"} %>
+    <%= f.input :description, label:'內容',input_html: { class: "form-control"} %>
+  </div>
+  <%= f.submit "送出", class: "btn btn-success btn-block", data: { disable_with: "送出中..." } %>
 <% end %>
+<br>
+<%= link_to "取消返回", root_path, :class =>"btn btn-warning btn-block" %>

@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # 使用gem 掛上 bootstrap 框架
 gem 'bootstrap-sass'
 
+# 使用simple form 簡化表單
+gem 'simple_form'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

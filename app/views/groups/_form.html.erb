@@ -1,16 +1,23 @@
 <%= form_for(@group) do |f| %>
+	<div class="form-group">
 	<% if @group.errors.any? %>
-		<ul>
 			<% @group.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
+				<div class="alert alert-danger" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+					<strong><%= msg %></strong>
+				</div>
 			<% end %>
-		</ul>
 	<% end %>
-	<%= f.label :title, "標題" %>
-	<%= f.text_field :title %>
+	<div class="form-group string optional">
+		<%= f.label :title, "標題" , :class => "string optional control-label" %>
+		<%= f.text_field :title , :class => "string optional form-control form-control" %>
+	</div>
+	<div class="form-group string optional">
+		<%= f.label :description, "內容" , :class => "string optional control-label" %>
+		<%= f.text_area :description , :class => "string optional form-control form-control" %>
+	</div>
+	</div>
+	<%= f.submit "送出", :disable_with => '送出中', :class => "btn btn-primary btn-block" %>
 	<br>
-	<%= f.label :description, "內容" %>
-	<%= f.text_area :description %>
-	<br>
-	<%= f.submit "送出", :disable_with => '送出中' %>
+	<%= link_to "取消返回",root_path,:class => "btn btn-warning btn-block"  %>
 <% end %>

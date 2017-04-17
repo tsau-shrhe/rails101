@@ -1,0 +1,14 @@
+﻿<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+	<h2>新增討論</h2>
+	<hr>
+	<%= form_for @group do |f| %>
+	標題
+	<%= f.text_field :title %>
+	<br>
+	內容
+	<br>
+	<%= f.text_area :description %>
+	<br>
+	<%= f.submit "送出", :disable_with => "送出中..." %>
+	<% end -%>
+</div>

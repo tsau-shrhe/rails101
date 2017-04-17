@@ -8,6 +8,7 @@
         <td>#</td>
         <td>標題</td>
         <td>內容</td>
+        <td>發佈者</td>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
           <td>#</td>
           <td><%= link_to(group.title, group_path(group)) %></td>
           <td><%= group.description %></td>
+          <td><%= group.user.email %></td>
           <td>
               <%= link_to("編輯", edit_group_path(group), class: "btn btn-sm btn-success")%>
               <%= link_to("刪除", group_path(group),    class: "btn btn-sm btn-danger",

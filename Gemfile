@@ -30,6 +30,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# 使用 devise 時出現 cannot load such file -- bcrypt_ext 的錯誤
+# 需添加該套件
+gem 'bcrypt', platforms: :ruby
+
 # 使用gem 掛上 bootstrap 框架
 gem 'bootstrap-sass'
 

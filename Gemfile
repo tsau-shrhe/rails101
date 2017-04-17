@@ -36,6 +36,9 @@ gem 'bootstrap-sass'
 # 使用simple form 簡化表單
 gem 'simple_form'
 
+# 使用 devise 快速實作登入系統
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

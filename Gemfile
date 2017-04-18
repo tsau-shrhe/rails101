@@ -43,6 +43,9 @@ gem 'simple_form'
 # 使用 devise 快速實作登入系統
 gem 'devise'
 
+# win10環境rails s會出現TypeError: 物件不支援此屬性或方法的解決套件
+gem 'coffee-script-source', '1.8.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

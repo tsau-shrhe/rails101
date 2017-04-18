@@ -19,9 +19,10 @@
           <td><%= group.description %></td>
           <td><%= group.user.email %></td>
           <td>
+            <% if current_user && current_user == group.user %>
               <%= link_to("編輯", edit_group_path(group), class: "btn btn-sm btn-success")%>
-              <%= link_to("刪除", group_path(group),    class: "btn btn-sm btn-danger",
-                          method: :delete, data: { confirm: "您確定要刪除?" } )%>
+              <%= link_to("刪除", group_path(group),    class: "btn btn-sm btn-danger",method: :delete, data: { confirm: "您確定要刪除?" } )%>
+            <% end %>
           </td>
         </tr>
       <% end %>

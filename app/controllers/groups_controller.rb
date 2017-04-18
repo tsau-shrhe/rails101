@@ -5,12 +5,16 @@ class GroupsController < ApplicationController
 	def index
 		@groups = Group.all
 	end
+
 	def new
 		@group = Group.new
 	end
+
 	def show
 		@group = Group.find(params[:id])
+		@posts = @group.posts
 	end
+
 	def edit
 
 	end
@@ -24,6 +28,7 @@ class GroupsController < ApplicationController
 			render :new
 		end
 	end
+
 	def update
 
 		if @group.update(group_params)
@@ -32,6 +37,7 @@ class GroupsController < ApplicationController
 			render :edit
 		end
 	end
+
 	def destroy
 		@group.destroy
 		#flash[:alert] = "討論版刪除"
@@ -50,4 +56,5 @@ class GroupsController < ApplicationController
 			redirect_to root_path , alert:"您沒有刪除權限!!"
 		end
 	end
+
 end

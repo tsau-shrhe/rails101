@@ -1,6 +1,8 @@
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<div class="group">
+		<% if current_user && current_user == @group.user %>
 			<%= link_to "編輯", edit_group_path(@group), :class => "btn btn-success pull-right" %>
+		<% end %>
 		</div>
 	<h2><%= @group.title %></h2>
 	<p><%= @group.description %></p>

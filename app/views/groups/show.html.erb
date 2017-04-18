@@ -27,6 +27,11 @@
 		</tbody>
 	</table>
 	<!-- post文章end -->
+	<!-- 分頁 -->
+	<div class="text-center">
+		<%= will_paginate @posts %>
+	</div>
+	<!-- 分頁end -->
 	<hr>
 	<%= link_to "返回", root_path, :class => "btn btn-info btn-block" %>
 </div>

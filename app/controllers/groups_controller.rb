@@ -44,6 +44,33 @@ class GroupsController < ApplicationController
 		redirect_to groups_path , alert: "討論刪除成功。"
 	end
 
+	def join
+		@group = Group.find(params[:id])
+
+		if !current_user.is_member_of?(@group)
+			current_user.join!(@group)
+			flash[:notice] = "成功加入本討論版!!"
+		else
+			flash[:warning] = "你已經是本討論版成員了"
+		end
+
+		#這可能出錯
+		redirect_to group_path(@group)
+	end
+
+	def quit
+		@group = Group.find(params[:id])
+
+		if current_user.is_member_of?(@group)
+			current_user.quit!(@group)
+			flash[:alert] = "成功退出討論版"
+		else
+			flash[:warning] = "你還不是本版討論成員，無法退出。"
+		end
+
+		redirect_to group_path(@group)
+	end
+
 	private
 
 	def group_params
